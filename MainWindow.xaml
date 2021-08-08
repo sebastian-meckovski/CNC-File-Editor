@@ -9,7 +9,7 @@
     <Grid>
         <StackPanel>
             <Label Content="Test"/>
-            <Label Content="Another Test"/>
+            <Label Content="Another Test1"/>
         </StackPanel>
     </Grid>
 </Window>
