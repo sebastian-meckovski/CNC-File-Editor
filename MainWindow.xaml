@@ -7,9 +7,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <StackPanel>
-            <Label Content="Test"/>
-            <Label Content="Another Test1"/>
-        </StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ListView Margin="10" Name="myListView"></ListView>
+		<Button Content="Browse" Width="70" Height="20" Click="Browse_Button_Click" Grid.Row="2"/> 
     </Grid>
 </Window>

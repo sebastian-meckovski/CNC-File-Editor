@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +25,16 @@ namespace MassTextModifier
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Browse_Button_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Multiselect = true;
+            openFileDialog.ShowDialog();
+
+            myListView.ItemsSource = openFileDialog.FileNames;
+
         }
     }
 }
