@@ -27,19 +27,22 @@ namespace MassTextModifier
             InitializeComponent();
         }
 
-        private void Browse_Button_Click(object sender, RoutedEventArgs e)
+        public void Browse_Button_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Multiselect = true;
             openFileDialog.ShowDialog();
 
-            myListView.ItemsSource = openFileDialog.FileNames;
+            List<string> myItems = openFileDialog.FileNames.ToList();
+
+            myListView.ItemsSource = myItems;
 
         }
 
         private void Delete_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            myListView.Items.RemoveAt(1);  // Error here. Not sure what it means. Need help
+                                           // Operation is not valid while ItemsSource is in use. Access and modify elements with ItemsControl.ItemsSource instead.
         }
     }
 }
