@@ -36,5 +36,10 @@ namespace MassTextModifier
             myListView.ItemsSource = openFileDialog.FileNames;
 
         }
+
+        private void Delete_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

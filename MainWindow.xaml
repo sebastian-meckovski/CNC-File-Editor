@@ -15,7 +15,11 @@
             <RowDefinition Height="4*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+
         <ListView Margin="10" Name="myListView"></ListView>
-		<Button Content="Browse" Width="70" Height="20" Click="Browse_Button_Click" Grid.Row="2"/> 
+        <DockPanel Grid.Row="1" Width="200" HorizontalAlignment="Left" Margin="20">
+		    <Button Content="Browse" Width="70" Height="20" Click="Browse_Button_Click"/>
+            <Button Content="Delete Selected" Width="90" Height="20" Click="Delete_Button_Click"/>
+        </DockPanel>
     </Grid>
 </Window>
