@@ -23,19 +23,20 @@ namespace MassTextModifier
     /// </summary>
     public partial class MainWindow : Window
     {
+        ObservableCollection<string> myItems = new ObservableCollection<string>();
+
         public MainWindow()
         {
             InitializeComponent();
         }
-        ObservableCollection<string> myItems = new ObservableCollection<string>();
         public void Browse_Button_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Multiselect = true;
             openFileDialog.ShowDialog();
 
-            
             var students = openFileDialog.FileNames.ToList();
+
             foreach(var student in students)
             {
                 myItems.Add(student);
@@ -47,9 +48,16 @@ namespace MassTextModifier
 
         private void Delete_Button_Click(object sender, RoutedEventArgs e)
         {
-            myItems.RemoveAt(myListView.SelectedIndex);
-            //myListView.Items.RemoveAt(myListView.SelectedIndex);  // Error here. Not sure what it means. Need help
-            // Operation is not valid while ItemsSource is in use. Access and modify elements with ItemsControl.ItemsSource instead.
+            int myIndex = myListView.SelectedIndex;                  // need to verify if it's the right way to do it
+            try
+            {
+                myItems.RemoveAt(myIndex);
+                myListView.SelectedItem = myListView.Items[myIndex];
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+
+            }
         }
     }
 }
