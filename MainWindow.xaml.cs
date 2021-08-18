@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -26,14 +27,19 @@ namespace MassTextModifier
         {
             InitializeComponent();
         }
-
+        ObservableCollection<string> myItems = new ObservableCollection<string>();
         public void Browse_Button_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Multiselect = true;
             openFileDialog.ShowDialog();
 
-            List<string> myItems = openFileDialog.FileNames.ToList();
+            
+            var students = openFileDialog.FileNames.ToList();
+            foreach(var student in students)
+            {
+                myItems.Add(student);
+            }
 
             myListView.ItemsSource = myItems;
 
@@ -41,8 +47,9 @@ namespace MassTextModifier
 
         private void Delete_Button_Click(object sender, RoutedEventArgs e)
         {
-            myListView.Items.RemoveAt(1);  // Error here. Not sure what it means. Need help
-                                           // Operation is not valid while ItemsSource is in use. Access and modify elements with ItemsControl.ItemsSource instead.
+            myItems.RemoveAt(myListView.SelectedIndex);
+            //myListView.Items.RemoveAt(myListView.SelectedIndex);  // Error here. Not sure what it means. Need help
+            // Operation is not valid while ItemsSource is in use. Access and modify elements with ItemsControl.ItemsSource instead.
         }
     }
 }
