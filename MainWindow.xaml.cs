@@ -48,7 +48,14 @@ namespace MassTextModifier
 
         private void Delete_Button_Click(object sender, RoutedEventArgs e)
         {
-            int myIndex = myListView.SelectedIndex;                  // need to verify if it's the right way to do it
+            //if (myListView.SelectedItem != null)
+            //{
+            //    int myIndex = myListView.SelectedIndex;
+            //    myItems.RemoveAt(myIndex);
+            //    myListView.SelectedItem = myListView.Items[myIndex];
+            //}
+
+            int myIndex = myListView.SelectedIndex;                  // can I write code like this? It works better because it will always handle error for me
             try
             {
                 myItems.RemoveAt(myIndex);
@@ -58,6 +65,20 @@ namespace MassTextModifier
             {
 
             }
+
+        }
+
+        private void Delete_All_Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (myItems != null)
+            {
+                myItems.Clear();
+            }
+        }
+
+        private void Sort_Button_Click(object sender, RoutedEventArgs e)
+        {
+            //still don't know how to do that
         }
     }
 }
