@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MassTextModifier"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="700">
+        Title="MainWindow" Height="500" Width="700" MinHeight="500" MinWidth="700">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="4*"/>
+            <RowDefinition Height="3.5*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -22,6 +22,19 @@
             <Button Margin="5" Content="Delete Selected" Click="Delete_Button_Click"/>
             <Button Content="Delete All" Margin="5" Click="Delete_All_Button_Click"/>
             <Button Content="Sort A-Z" Margin="5" Click="Sort_Button_Click"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Margin="10">
+            <DockPanel>
+                <RadioButton Content="Overwrite Existing Files" Margin="2"/>
+                <RadioButton Content="Create New" Margin="2"/>
+                <Button Content="Select Output Location" Width="150" HorizontalAlignment="Left" Margin="2"/>
+            </DockPanel>
+            <DockPanel>
+                <Label Content="Output Location: "/>
+                <Label Content="URL"/>
+            </DockPanel>
+            <Button Content="Execute" Width="80" HorizontalAlignment="Left" Margin="5"/>
         </StackPanel>
     </Grid>
 </Window>
