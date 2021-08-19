@@ -3,20 +3,21 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Icon="C:\Users\sebas\Source\Repos\sebastian-meckovski\MassTextModifier\textModifierIcon.png"
         xmlns:local="clr-namespace:MassTextModifier"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="700" MinHeight="500" MinWidth="700">
+        Title="Nesting Contour" Height="500" Width="700" MinHeight="500" MinWidth="700">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="120"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="3.5*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
 
-        <ListView Margin="10" Name="myListView"></ListView>
+        <ListView Margin="5" Name="myListView"></ListView>
         <StackPanel Grid.Column="1" Width="100" Margin="0 10 0 0" HorizontalAlignment="Center">
 		    <Button Content="Browse" Margin="5" Click="Browse_Button_Click"/>
             <Button Margin="5" Content="Delete Selected" Click="Delete_Button_Click"/>
@@ -24,10 +25,10 @@
             <Button Content="Sort A-Z" Margin="5" Click="Sort_Button_Click"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="1" Margin="10">
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Margin="10">
             <DockPanel>
-                <RadioButton Content="Overwrite Existing Files" Margin="2"/>
-                <RadioButton Content="Create New" Margin="2"/>
+                <RadioButton Content="Overwrite Existing Files" Margin="2" Height="15"/>
+                <RadioButton Content="Create New" Margin="2" Height="15"/>
                 <Button Content="Select Output Location" Width="150" HorizontalAlignment="Left" Margin="2"/>
             </DockPanel>
             <DockPanel>
