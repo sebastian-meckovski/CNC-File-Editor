@@ -35,7 +35,8 @@
                 <Label Content="Output Location: "/>
                 <Label Content="URL"/>
             </DockPanel>
-            <Button Content="Execute" Width="80" HorizontalAlignment="Left" Margin="5"/>
+            <Button Content="Execute" Width="80" HorizontalAlignment="Left" Margin="5"
+                    Click="Execute_Button_Click"/>
         </StackPanel>
     </Grid>
 </Window>

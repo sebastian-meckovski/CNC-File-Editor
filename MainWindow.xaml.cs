@@ -15,12 +15,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MassTextModifier.Classess;
 
 namespace MassTextModifier
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         ObservableCollection<string> myItems = new ObservableCollection<string>();
@@ -79,6 +77,24 @@ namespace MassTextModifier
         private void Sort_Button_Click(object sender, RoutedEventArgs e)
         {
             //still don't know how to do that
+        }
+
+        private void Execute_Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                foreach (string item in myItems)
+                {
+                    textModifier.OverwriteFile(item);
+                }
+
+                MessageBox.Show($"{myItems.Count} files have been modified");
+                myItems.Clear();
+            }
+            catch
+            {
+                MessageBox.Show("Unexpected error occured");
+            }
         }
     }
 }
