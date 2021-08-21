@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Windows;
 using MassTextModifier.Classess;
-
+// Hi Gautam. My questions are on lines 51, 76, 98, 124
 namespace MassTextModifier
 {
     public partial class MainWindow : Window
@@ -17,6 +17,8 @@ namespace MassTextModifier
             InitializeComponent();
 
             OverWriteRadioButton.IsChecked = true;
+            SelectOutputLocationButton.IsEnabled = false;
+
 
             string outputFilePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
@@ -47,9 +49,9 @@ namespace MassTextModifier
             //    myItems.RemoveAt(myIndex);
             //    myListView.SelectedItem = myListView.Items[myIndex];
             //}
-
-            int myIndex = myListView.SelectedIndex;                  // can I write code like this? It works better because it will always handle error for me
-            try
+                                                                     // not sure if it's better to use try or if statement here.
+            int myIndex = myListView.SelectedIndex;                  // can I write code like this? It works better for me because 
+            try                                                      // it will always handle error even if I could not predict it
             {
                 myItems.RemoveAt(myIndex);
                 myListView.SelectedItem = myListView.Items[myIndex];
@@ -71,8 +73,7 @@ namespace MassTextModifier
 
         private void Sort_Button_Click(object sender, RoutedEventArgs e)
         {
-            //still don't know how to do that
-            outputFilePathLabel.Content = "mnononononon";
+            //still don't know how to do that. I tried
         }
 
         private void Execute_Button_Click(object sender, RoutedEventArgs e)
@@ -92,11 +93,10 @@ namespace MassTextModifier
                 }
                 else
                 {
-                    
                     foreach (string itemfilePath in myItems)
                     {
-                        string newFilePath = System.IO.Path.Combine(outputFilePathLabel.Content.ToString(), System.IO.Path.GetFileName(itemfilePath));
-                        textModifier.OverwriteFile(itemfilePath, newFilePath);
+                        string newFilePath = System.IO.Path.Combine(outputFilePathLabel.Content.ToString(), System.IO.Path.GetFileName(itemfilePath));  // can I pass label.content as a string
+                        textModifier.OverwriteFile(itemfilePath, newFilePath);                                                                          // argument or is it a bad practice?
                     }
                     MessageBox.Show($"{myItems.Count} files have been modified");
                     myItems.Clear();
@@ -107,5 +107,18 @@ namespace MassTextModifier
                 MessageBox.Show("Unexpected error occured");
             }
         }
+
+        private void CreateNewRadioButton_Click(object sender, RoutedEventArgs e)  
+        {
+            SelectOutputLocationButton.IsEnabled = true;
+        }
+
+        private void OverWriteRadioButton_Click(object sender, RoutedEventArgs e)
+        {
+            SelectOutputLocationButton.IsEnabled = false;
+        }
     }
 }
+
+
+// Display File names only checkbox not sure if there is an easy way to implement it.
