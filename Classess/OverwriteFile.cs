@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 
 namespace MassTextModifier.Classess
 {
     public class textModifier
     {
-        public static void OverwriteFile(string filePath)
+        public static void OverwriteFile(string inputFilePath, string outputFilePath)
         {
-            List<string> lines = File.ReadAllLines(filePath).ToList();
+            List<string> lines = File.ReadAllLines(inputFilePath).ToList();
 
             List<int> ABindexList = new List<int>();
             int iterIndex = 0;
@@ -31,7 +29,7 @@ namespace MassTextModifier.Classess
                 lines.Insert(insertIndex, "CALL BN_TrennerInnenAussen ()");
             }
 
-            File.WriteAllLines(filePath, lines);
+            File.WriteAllLines(outputFilePath, lines);
         }
     }
 }
