@@ -32,7 +32,7 @@ namespace MassTextModifier
 
             var students = openFileDialog.FileNames.ToList();
 
-            foreach(var student in students)
+            foreach (var student in students)
             {
                 myItems.Add(student);
             }
@@ -49,16 +49,21 @@ namespace MassTextModifier
             //    myItems.RemoveAt(myIndex);
             //    myListView.SelectedItem = myListView.Items[myIndex];
             //}
-                                                                     // not sure if it's better to use try or if statement here.
+            // not sure if it's better to use try or if statement here. //Try catch is always good practive to use
             int myIndex = myListView.SelectedIndex;                  // can I write code like this? It works better for me because 
             try                                                      // it will always handle error even if I could not predict it
             {
                 myItems.RemoveAt(myIndex);
                 myListView.SelectedItem = myListView.Items[myIndex];
             }
-            catch (ArgumentOutOfRangeException)
+            catch (OutOfMemoryException ex) //only get out of exception index
             {
-
+                MessageBox.Show("Your personalize messge for the out of index exception");
+            }
+            catch (Exception ex)//try to get all exception even if other than out of index exception
+            {
+                MessageBox.Show(ex.Message);
+                //ex.Message; error message
             }
 
         }
@@ -73,6 +78,7 @@ namespace MassTextModifier
 
         private void Sort_Button_Click(object sender, RoutedEventArgs e)
         {
+            myItems = new ObservableCollection<string>(myItems.OrderBy(i => i)); //just use linq to order by and observable collection for the sync ui with list
             //still don't know how to do that. I tried
         }
 
@@ -95,8 +101,8 @@ namespace MassTextModifier
                 {
                     foreach (string itemfilePath in myItems)
                     {
-                        string newFilePath = System.IO.Path.Combine(outputFilePathLabel.Content.ToString(), System.IO.Path.GetFileName(itemfilePath));  // can I pass label.content as a string
-                        textModifier.OverwriteFile(itemfilePath, newFilePath);                                                                          // argument or is it a bad practice?
+                        string newFilePath = System.IO.Path.Combine(Convert.ToString(outputFilePathLabel.Content), System.IO.Path.GetFileName(itemfilePath));  // can I pass label.content as a string //label.content is fine Try use Convert.string() rather than toString() method
+                        textModifier.OverwriteFile(itemfilePath, newFilePath);                                                                          // argument or is it a bad practice? //we can discuss this not sure what this means question
                     }
                     MessageBox.Show($"{myItems.Count} files have been modified");
                     myItems.Clear();
@@ -108,7 +114,7 @@ namespace MassTextModifier
             }
         }
 
-        private void CreateNewRadioButton_Click(object sender, RoutedEventArgs e)  
+        private void CreateNewRadioButton_Click(object sender, RoutedEventArgs e)
         {
             SelectOutputLocationButton.IsEnabled = true;
         }
@@ -122,3 +128,4 @@ namespace MassTextModifier
 
 
 // Display File names only checkbox not sure if there is an easy way to implement it.
+// you mean showing file name list with checkbox?
