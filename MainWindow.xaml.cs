@@ -6,7 +6,6 @@ using System.Linq;
 using System.Windows;
 using MassTextModifier.Classess;
 using MassTextModifier.Model;
-// Hi Gautam. My questions are on lines 51, 76, 98, 124
 namespace MassTextModifier
 {
     public partial class MainWindow : Window
@@ -22,7 +21,6 @@ namespace MassTextModifier
 
 
             //string outputFilePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-
             //this.outputFilePathLabel.Content = outputFilePath;
         }
         public void Browse_Button_Click(object sender, RoutedEventArgs e)
@@ -140,7 +138,3 @@ namespace MassTextModifier
         }
     }
 }
-
-
-// Display File names only checkbox not sure if there is an easy way to implement it.
-// you mean showing file name list with checkbox?
