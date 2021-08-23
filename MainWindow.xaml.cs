@@ -42,7 +42,6 @@ namespace MassTextModifier
             }
 
             myListView.ItemsSource = myItems;
-
         }
 
         private void Delete_Button_Click(object sender, RoutedEventArgs e)
@@ -126,6 +125,18 @@ namespace MassTextModifier
         private void OverWriteRadioButton_Click(object sender, RoutedEventArgs e)
         {
             SelectOutputLocationButton.IsEnabled = false;
+        }
+
+        private void MyCheckBox_Click(object sender, RoutedEventArgs e)
+        {
+            if (MyCheckBox.IsChecked == true)
+            {
+                myListView.DisplayMemberPath = "FileName";
+            }
+            else
+            {
+                myListView.DisplayMemberPath = "FilePath";
+            }
         }
     }
 }
