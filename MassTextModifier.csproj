@@ -9,9 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Icons\**" />
     <Compile Remove="Properties\**" />
+    <EmbeddedResource Remove="Icons\**" />
     <EmbeddedResource Remove="Properties\**" />
+    <None Remove="Icons\**" />
     <None Remove="Properties\**" />
+    <Page Remove="Icons\**" />
     <Page Remove="Properties\**" />
   </ItemGroup>
 
@@ -22,10 +26,6 @@
       <VersionMajor>2</VersionMajor>
       <Guid>215d64d2-031c-33c7-96e3-61794cd1ee61</Guid>
     </COMReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Icons\" />
   </ItemGroup>
 
   <ItemGroup>

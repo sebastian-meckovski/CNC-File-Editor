@@ -7,7 +7,7 @@ using System.Windows;
 using MassTextModifier.Classess;
 using MassTextModifier.Model;
 using Microsoft.WindowsAPICodePack.Dialogs; // the library I installed, not sure if necesarry.
-// Hello Gautam. Questions are on line 75 and 135
+// Hello Gautam. Questions are on line 27, 75 and 135
 
 namespace MassTextModifier
 {
@@ -24,8 +24,8 @@ namespace MassTextModifier
 
 
             string outputFilePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            //this.outputFilePathLabel.Content = outputFilePath; //what's the difference
-            outputFilePathLabel.Content = outputFilePath;
+            //this.outputFilePathLabel.Content = outputFilePath;                                       // what's the difference between this.outputFilePathLabel.Content
+            outputFilePathLabel.Content = outputFilePath;                                              // and outputFilePathLabel.Content? 
         }
         public void Browse_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -133,7 +133,7 @@ namespace MassTextModifier
         private void SelectOutputLocationButton_Click(object sender, RoutedEventArgs e)
         {
             var dialog = new CommonOpenFileDialog();                     // Is this the only way to create directory filepath dialog?
-            dialog.IsFolderPicker = true;                                // I had to install a package for that. I didn't have to install it for filepath dialog.
+            dialog.IsFolderPicker = true;                                // I had to install a package for that. I didn't have to install it for filepath dialog on line 30.
             CommonFileDialogResult result = dialog.ShowDialog();
             if (result == CommonFileDialogResult.Ok)
             {
