@@ -6,8 +6,8 @@ using System.Linq;
 using System.Windows;
 using MassTextModifier.Classess;
 using MassTextModifier.Model;
-using Microsoft.WindowsAPICodePack.Dialogs;
-
+using Microsoft.WindowsAPICodePack.Dialogs; // the library I installed, not sure if necesarry.
+// Hello Gautam. Questions are on line 75 and 135
 
 namespace MassTextModifier
 {
@@ -33,10 +33,9 @@ namespace MassTextModifier
             openFileDialog.Multiselect = true;
             openFileDialog.ShowDialog();
 
-            var students = openFileDialog.FileNames.ToList();
+            var listOfItems = openFileDialog.FileNames.ToList();
             
-
-            foreach (var student in students)
+            foreach (var student in listOfItems)
             {
                 FileInfo fileInfo = new FileInfo();
                 fileInfo.FilePath = student;
@@ -48,29 +47,16 @@ namespace MassTextModifier
 
         private void Delete_Button_Click(object sender, RoutedEventArgs e)
         {
-            //if (myListView.SelectedItem != null)
-            //{
-            //    int myIndex = myListView.SelectedIndex;
-            //    myItems.RemoveAt(myIndex);
-            //    myListView.SelectedItem = myListView.Items[myIndex];
-            //}
-            // not sure if it's better to use try or if statement here. //Try catch is always good practive to use
-            int myIndex = myListView.SelectedIndex;                  // can I write code like this? It works better for me because 
-            try                                                      // it will always handle error even if I could not predict it
+            int myIndex = myListView.SelectedIndex;
+            try
             {
                 myItems.RemoveAt(myIndex);
                 myListView.SelectedItem = myListView.Items[myIndex];
             }
-            catch (OutOfMemoryException ex) //only get out of exception index
+            catch (Exception)
             {
-                MessageBox.Show("Your personalize messge for the out of index exception");
+                // I left it blank because I want the program to perform no action if there is an exception.
             }
-            catch (Exception ex)//try to get all exception even if other than out of index exception
-            {
-                MessageBox.Show(ex.Message);
-                //ex.Message; error message
-            }
-
         }
 
         private void Delete_All_Button_Click(object sender, RoutedEventArgs e)
@@ -83,8 +69,11 @@ namespace MassTextModifier
 
         private void Sort_Button_Click(object sender, RoutedEventArgs e)
         {
-            myItems = new ObservableCollection<FileInfo>(myItems.OrderBy(i => i.FileName)); //just use linq to order by and observable collection for the sync ui with list
-            //still don't know how to do that. I tried
+            myItems = new ObservableCollection<FileInfo>(myItems.OrderBy(i => i.FileName)); 
+
+
+            // I tried testing your code but it still doesn't work.
+            // Also, Is there a way to sort it in descending order?
         }
 
         private void Execute_Button_Click(object sender, RoutedEventArgs e)
@@ -106,8 +95,8 @@ namespace MassTextModifier
                 {
                     foreach (FileInfo itemfilePath in myItems)
                     {
-                        string newFilePath = System.IO.Path.Combine(Convert.ToString(outputFilePathLabel.Content), System.IO.Path.GetFileName(itemfilePath.FilePath));  // can I pass label.content as a string //label.content is fine Try use Convert.string() rather than toString() method
-                        textModifier.OverwriteFile(itemfilePath.FilePath, newFilePath);                                                                          // argument or is it a bad practice? //we can discuss this not sure what this means question
+                        string newFilePath = System.IO.Path.Combine(Convert.ToString(outputFilePathLabel.Content), System.IO.Path.GetFileName(itemfilePath.FilePath)); 
+                        textModifier.OverwriteFile(itemfilePath.FilePath, newFilePath);
                     }
                     MessageBox.Show($"{myItems.Count} files have been saved at {outputFilePathLabel.Content}");
                     myItems.Clear();
@@ -143,8 +132,8 @@ namespace MassTextModifier
 
         private void SelectOutputLocationButton_Click(object sender, RoutedEventArgs e)
         {
-            var dialog = new CommonOpenFileDialog();                     // Not sure if it's the best way. I used windowsapicodepack-shell nuget package for that
-            dialog.IsFolderPicker = true;
+            var dialog = new CommonOpenFileDialog();                     // Is this the only way to create directory filepath dialog?
+            dialog.IsFolderPicker = true;                                // I had to install a package for that. I didn't have to install it for filepath dialog.
             CommonFileDialogResult result = dialog.ShowDialog();
             if (result == CommonFileDialogResult.Ok)
             {
