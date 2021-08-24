@@ -6,6 +6,9 @@ using System.Linq;
 using System.Windows;
 using MassTextModifier.Classess;
 using MassTextModifier.Model;
+using Microsoft.WindowsAPICodePack.Dialogs;
+
+
 namespace MassTextModifier
 {
     public partial class MainWindow : Window
@@ -20,8 +23,9 @@ namespace MassTextModifier
             SelectOutputLocationButton.IsEnabled = false;
 
 
-            //string outputFilePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            //this.outputFilePathLabel.Content = outputFilePath;
+            string outputFilePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            //this.outputFilePathLabel.Content = outputFilePath; //what's the difference
+            outputFilePathLabel.Content = outputFilePath;
         }
         public void Browse_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -105,7 +109,7 @@ namespace MassTextModifier
                         string newFilePath = System.IO.Path.Combine(Convert.ToString(outputFilePathLabel.Content), System.IO.Path.GetFileName(itemfilePath.FilePath));  // can I pass label.content as a string //label.content is fine Try use Convert.string() rather than toString() method
                         textModifier.OverwriteFile(itemfilePath.FilePath, newFilePath);                                                                          // argument or is it a bad practice? //we can discuss this not sure what this means question
                     }
-                    MessageBox.Show($"{myItems.Count} files have been modified");
+                    MessageBox.Show($"{myItems.Count} files have been saved at {outputFilePathLabel.Content}");
                     myItems.Clear();
                 }
             }
@@ -134,6 +138,17 @@ namespace MassTextModifier
             else
             {
                 myListView.DisplayMemberPath = "FilePath";
+            }
+        }
+
+        private void SelectOutputLocationButton_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new CommonOpenFileDialog();                     // Not sure if it's the best way. I used windowsapicodepack-shell nuget package for that
+            dialog.IsFolderPicker = true;
+            CommonFileDialogResult result = dialog.ShowDialog();
+            if (result == CommonFileDialogResult.Ok)
+            {
+                outputFilePathLabel.Content = dialog.FileName;
             }
         }
     }
