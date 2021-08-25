@@ -6,8 +6,7 @@ using System.Linq;
 using System.Windows;
 using MassTextModifier.Classess;
 using MassTextModifier.Model;
-using Microsoft.WindowsAPICodePack.Dialogs; // the library I installed, not sure if necesarry.
-using System.Collections.Generic;
+
 using MassTextModifier.Extention;
 // Hello Gautam. Questions are on line 27, 75 and 135
 
@@ -146,24 +145,28 @@ namespace MassTextModifier
 
         private void SelectOutputLocationButton_Click(object sender, RoutedEventArgs e)
         {
-            //using (var dialog1 = new System.Windows.Forms.FolderBrowserDialog())
-            //{
-            //    System.Windows.Forms.DialogResult result1 = dialog1.ShowDialog();
-            //    if(result1 == System.Windows.Forms.DialogResult.OK)
-            //    {
-            //        outputFilePathLabel.Content = dialog1.SelectedPath;
-            //    }
-            //} 
+            using (var dialog1 = new System.Windows.Forms.FolderBrowserDialog())
+            {
+                System.Windows.Forms.DialogResult result1 = dialog1.ShowDialog();
+                if (result1 == System.Windows.Forms.DialogResult.OK)
+                {
+                    outputFilePathLabel.Content = dialog1.SelectedPath;
+                }
+            }
 
             //System.Windows.Forms does provide the same feature without installing package uncomment above lines to see same result.
 
-            var dialog = new CommonOpenFileDialog();                     // Is this the only way to create directory filepath dialog?
-            dialog.IsFolderPicker = true;                                // I had to install a package for that. I didn't have to install it for filepath dialog on line 30.
-            CommonFileDialogResult result = dialog.ShowDialog();
-            if (result == CommonFileDialogResult.Ok)
-            {
-                outputFilePathLabel.Content = dialog.FileName;
-            }
+            //using Microsoft.WindowsAPICodePack.Dialogs; // the library I installed, not sure if necesarry.
+            //using System.Collections.Generic;
+
+
+            //var dialog = new CommonOpenFileDialog();                     // Is this the only way to create directory filepath dialog?
+            //dialog.IsFolderPicker = true;                                // I had to install a package for that. I didn't have to install it for filepath dialog on line 30.
+            //CommonFileDialogResult result = dialog.ShowDialog();
+            //if (result == CommonFileDialogResult.Ok)
+            //{
+            //    outputFilePathLabel.Content = dialog.FileName;
+            //}
         }
     }
 }
