@@ -72,14 +72,22 @@ namespace MassTextModifier
             }
         }
 
-        private void Sort_Button_Click(object sender, RoutedEventArgs e)
+        private void Sort_A_Z_Button_Click(object sender, RoutedEventArgs e)
         {
             myItems.Sort((a, b) => { return a.FileName.CompareTo(b.FileName); });
-            // I tried testing your code but it still doesn't work.
-            
-            // Also, Is there a way to sort it in descending order?
-            //uncomment below line to descending order
-            //myItems.Sort((b, a) => { return a.FileName.CompareTo(b.FileName); });
+
+            sortButton.Click += new RoutedEventHandler(Sort_Z_A_Button_Click);
+            sortButton.Click -= new RoutedEventHandler(Sort_A_Z_Button_Click);
+            sortButton.Content = "Sort Z-A";
+        }
+
+        private void Sort_Z_A_Button_Click(object sender, RoutedEventArgs e)
+        {
+            myItems.Sort((b, a) => { return a.FileName.CompareTo(b.FileName); }); //Gautam2010 wrote this and I'm not sure what
+
+            sortButton.Click += new RoutedEventHandler(Sort_A_Z_Button_Click);
+            sortButton.Click -= new RoutedEventHandler(Sort_Z_A_Button_Click);
+            sortButton.Content = "Sort A-Z";
         }
 
         private void Execute_Button_Click(object sender, RoutedEventArgs e)
@@ -157,8 +165,5 @@ namespace MassTextModifier
                 outputFilePathLabel.Content = dialog.FileName;
             }
         }
-
-
-        
     }
 }
