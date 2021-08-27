@@ -145,14 +145,14 @@ namespace MassTextModifier
 
         private void SelectOutputLocationButton_Click(object sender, RoutedEventArgs e)
         {
-            //using (var dialog1 = new System.Windows.Forms.FolderBrowserDialog())
-            //{
-            //    System.Windows.Forms.DialogResult result1 = dialog1.ShowDialog();
-            //    if (result1 == System.Windows.Forms.DialogResult.OK)
-            //    {
-            //        outputFilePathLabel.Content = dialog1.SelectedPath;
-            //    }
-            //}
+            using (var dialog1 = new System.Windows.Forms.FolderBrowserDialog())
+            {
+                System.Windows.Forms.DialogResult result1 = dialog1.ShowDialog();
+                if (result1 == System.Windows.Forms.DialogResult.OK)
+                {
+                    outputFilePathLabel.Content = dialog1.SelectedPath;
+                }
+            }
 
             //System.Windows.Forms does provide the same feature without installing package uncomment above lines to see same result.
 
