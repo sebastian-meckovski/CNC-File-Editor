@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.31515.178
+VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassTextModifier", "MassTextModifier.csproj", "{85CB801A-85F6-4BB1-ABC2-8B28F7A5979E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassTextModifier", "MassTextModifier.csproj", "{CEE5E386-8449-468F-B1F8-FCED0F3C4B08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{85CB801A-85F6-4BB1-ABC2-8B28F7A5979E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{85CB801A-85F6-4BB1-ABC2-8B28F7A5979E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{85CB801A-85F6-4BB1-ABC2-8B28F7A5979E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{85CB801A-85F6-4BB1-ABC2-8B28F7A5979E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEE5E386-8449-468F-B1F8-FCED0F3C4B08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEE5E386-8449-468F-B1F8-FCED0F3C4B08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEE5E386-8449-468F-B1F8-FCED0F3C4B08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEE5E386-8449-468F-B1F8-FCED0F3C4B08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {5742F694-552A-4B5E-B7C7-2AAC3BA79117}
+		SolutionGuid = {0005639E-1E3A-4BF4-ACBE-9F2DB21A1739}
 	EndGlobalSection
 EndGlobal

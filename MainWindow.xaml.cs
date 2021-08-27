@@ -38,7 +38,7 @@ namespace MassTextModifier
             openFileDialog.ShowDialog();
 
             var listOfItems = openFileDialog.FileNames.ToList();
-            
+
             foreach (var student in listOfItems)
             {
                 FileInfo fileInfo = new FileInfo();
@@ -108,7 +108,7 @@ namespace MassTextModifier
                 {
                     foreach (FileInfo itemfilePath in myItems)
                     {
-                        string newFilePath = System.IO.Path.Combine(Convert.ToString(outputFilePathLabel.Content), System.IO.Path.GetFileName(itemfilePath.FilePath)); 
+                        string newFilePath = System.IO.Path.Combine(Convert.ToString(outputFilePathLabel.Content), System.IO.Path.GetFileName(itemfilePath.FilePath));
                         textModifier.OverwriteFile(itemfilePath.FilePath, newFilePath);
                     }
                     MessageBox.Show($"{myItems.Count} files have been saved at {outputFilePathLabel.Content}");
@@ -145,14 +145,14 @@ namespace MassTextModifier
 
         private void SelectOutputLocationButton_Click(object sender, RoutedEventArgs e)
         {
-            using (var dialog1 = new System.Windows.Forms.FolderBrowserDialog())
-            {
-                System.Windows.Forms.DialogResult result1 = dialog1.ShowDialog();
-                if (result1 == System.Windows.Forms.DialogResult.OK)
-                {
-                    outputFilePathLabel.Content = dialog1.SelectedPath;
-                }
-            }
+            //using (var dialog1 = new System.Windows.Forms.FolderBrowserDialog())
+            //{
+            //    System.Windows.Forms.DialogResult result1 = dialog1.ShowDialog();
+            //    if (result1 == System.Windows.Forms.DialogResult.OK)
+            //    {
+            //        outputFilePathLabel.Content = dialog1.SelectedPath;
+            //    }
+            //}
 
             //System.Windows.Forms does provide the same feature without installing package uncomment above lines to see same result.
 
