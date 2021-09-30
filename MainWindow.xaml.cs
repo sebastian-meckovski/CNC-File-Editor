@@ -6,9 +6,7 @@ using System.Linq;
 using System.Windows;
 using MassTextModifier.Classess;
 using MassTextModifier.Model;
-
 using MassTextModifier.Extention;
-// Hello Gautam. Questions are on line 27, 75 and 135
 
 namespace MassTextModifier
 {
@@ -27,9 +25,9 @@ namespace MassTextModifier
             string outputFilePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             //this.outputFilePathLabel.Content = outputFilePath;                                       // what's the difference between this.outputFilePathLabel.Content
             outputFilePathLabel.Content = outputFilePath;                                              // and outputFilePathLabel.Content? 
-                                                                                                       //this refer to class MainWindow and so this. all the property of the class 
-                                                                                                       //it means outputFilePathLabel is property of MainWindow
-                                                                                                       //hence this.outputFilePathLabel and outputFilePathLabel both are the same
+                                                                                                       // this refer to class MainWindow and so this. all the property of the class 
+                                                                                                       // it means outputFilePathLabel is property of MainWindow
+                                                                                                       // hence this.outputFilePathLabel and outputFilePathLabel both are the same
         }
         public void Browse_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -117,7 +115,7 @@ namespace MassTextModifier
             }
             catch
             {
-                MessageBox.Show("Unexpected error occured");
+                MessageBox.Show("Unexpected error occured", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -153,20 +151,6 @@ namespace MassTextModifier
                     outputFilePathLabel.Content = dialog1.SelectedPath;
                 }
             }
-
-            //System.Windows.Forms does provide the same feature without installing package uncomment above lines to see same result.
-
-            //using Microsoft.WindowsAPICodePack.Dialogs; // the library I installed, not sure if necesarry.
-            //using System.Collections.Generic;
-
-
-            //var dialog = new CommonOpenFileDialog();                     // Is this the only way to create directory filepath dialog?
-            //dialog.IsFolderPicker = true;                                // I had to install a package for that. I didn't have to install it for filepath dialog on line 30.
-            //CommonFileDialogResult result = dialog.ShowDialog();
-            //if (result == CommonFileDialogResult.Ok)
-            //{
-            //    outputFilePathLabel.Content = dialog.FileName;
-            //}
         }
     }
 }
