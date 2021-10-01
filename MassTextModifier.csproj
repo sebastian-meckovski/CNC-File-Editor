@@ -112,9 +112,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\screenshot1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\textModifierIcon.ico" />
   </ItemGroup>
   <ItemGroup>
