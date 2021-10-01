@@ -119,5 +119,9 @@
   <ItemGroup>
     <Resource Include="Resources\textModifierIcon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MassTextModifierScreenshot1.png" />
+    <Resource Include="Resources\MassTextModifierScreenshot2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
