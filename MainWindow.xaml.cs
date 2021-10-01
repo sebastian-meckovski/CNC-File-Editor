@@ -6,7 +6,7 @@ using System.Linq;
 using System.Windows;
 using MassTextModifier.Classess;
 using MassTextModifier.Model;
-using MassTextModifier.Extention;
+using MassTextModifier.Extension;
 
 namespace MassTextModifier
 {

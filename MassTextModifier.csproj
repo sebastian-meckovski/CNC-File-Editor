@@ -35,7 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>textModifierIcon.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -68,7 +69,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Classess\OverwriteFile.cs" />
-    <Compile Include="Extention\ObservableCollectionExtention.cs" />
+    <Compile Include="Extension\ObservableCollectionExtension.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -109,9 +110,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="textModifierIcon.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\screenshot1.png" />
