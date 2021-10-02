@@ -98,9 +98,31 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="TestFiles\A bund side 2stk OBS smig.hop" />
+    <None Include="TestFiles\A bund spande 17stk.hop" />
+    <None Include="TestFiles\A Top Side 2 Stk OBS smig.hop" />
+    <None Include="TestFiles\A Top spande 17 stk.hop" />
+    <None Include="TestFiles\B bund side 2 stk.hop" />
+    <None Include="TestFiles\B bund spande 18 Stk.hop" />
+    <None Include="TestFiles\B Top Side 2 stk OBS smig.hop" />
+    <None Include="TestFiles\B Top spande 18 stk.hop" />
     <None Include="TestFiles\Ben.hop" />
     <None Include="TestFiles\Bundstyr hojre.hop" />
     <None Include="TestFiles\Bundstyr venstre.hop" />
+    <None Include="TestFiles\C bund side 2stk.hop" />
+    <None Include="TestFiles\C bund spande 18stk.hop" />
+    <None Include="TestFiles\C Top Side 2stk.hop" />
+    <None Include="TestFiles\C Top Spande 18stk.hop" />
+    <None Include="TestFiles\D bund side 2 stk.hop" />
+    <None Include="TestFiles\D bund spande 18stk.hop" />
+    <None Include="TestFiles\D top side 2stk.hop" />
+    <None Include="TestFiles\D top spande.hop" />
+    <None Include="TestFiles\håndliste R2544 V2.hop" />
+    <None Include="TestFiles\håndliste R2544.hop" />
+    <None Include="TestFiles\håndliste R4456 V2.hop" />
+    <None Include="TestFiles\håndliste R4456.hop" />
+    <None Include="TestFiles\liste 15stk nest.hop" />
+    <None Include="TestFiles\liste 20 stk.hop" />
     <None Include="TestFiles\Sengebund nederst.hop" />
     <None Include="TestFiles\Sengebund overst.hop" />
     <None Include="TestFiles\Sengehest.hop" />
