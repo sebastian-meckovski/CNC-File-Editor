@@ -71,7 +71,7 @@ namespace MassTextModifier
 
         private void Sort_A_Z_Button_Click(object sender, RoutedEventArgs e)
         {
-            myItems.Sort((a, b) => { return a.FileName.CompareTo(b.FileName); });
+            myItems.Sort((a, b) => { return a.FileName.CompareTo(b.FileName); }); //Gautam2010 wrote this and I'm not 100% sure how it works
 
             sortButton.Click += new RoutedEventHandler(Sort_Z_A_Button_Click);
             sortButton.Click -= new RoutedEventHandler(Sort_A_Z_Button_Click);
@@ -80,7 +80,7 @@ namespace MassTextModifier
 
         private void Sort_Z_A_Button_Click(object sender, RoutedEventArgs e)
         {
-            myItems.Sort((b, a) => { return a.FileName.CompareTo(b.FileName); }); //Gautam2010 wrote this and I'm not sure what
+            myItems.Sort((b, a) => { return a.FileName.CompareTo(b.FileName); }); //Gautam2010 wrote this and I'm not 100% sure how it works
 
             sortButton.Click += new RoutedEventHandler(Sort_A_Z_Button_Click);
             sortButton.Click -= new RoutedEventHandler(Sort_Z_A_Button_Click);
