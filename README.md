@@ -1,6 +1,7 @@
 # CNC File Editor (.NET WPF version)
 
-A Python version of this application can be found [here](https://github.com/sebastian-meckovski/CNC-File-Editor-QT5)
+A Python version of this application can be found [here](https://github.com/sebastian-meckovski/CNC-File-Editor-QT5).
+
 The CNC File Editor is a versatile tool tailored for efficient 
 manipulation of .hop and .txt files, crucial for CNC machine 
 operation.
