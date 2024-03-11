@@ -25,3 +25,10 @@ Once installed, open the desktop shortcut.
 - Open repository in Visual Studio.
 - Right click on MassTextModifier.csproj and select **Set as Startup Item**
 - Run the application
+
+### Video demo
+https://github.com/sebastian-meckovski/CNC-File-Editor/assets/59857424/24dcc5b0-2cbf-4069-b7dc-6e00fbca7d11
+![Screenshot](https://github.com/sebastian-meckovski/CNC-File-Editor-QT5/assets/59857424/48f3dd41-d415-44c7-9510-bebb8dc5a11b)
+
+
+  
