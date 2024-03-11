@@ -1,9 +1,27 @@
-<H1>CNC File Modifier</H1>
+# CNC File Editor (.NET WPF version)
+The CNC File Editor is a versatile tool tailored for efficient 
+manipulation of .hop and .txt files, crucial for CNC machine 
+operation.
 
-The program was designed to make a few simple changes to the large quantities of .hop (or .txt) files. These files contain information that allows the CNC machine to operate correctly. It is used by custom design furniture Raaschou company in Copenhagen, Denmark. The machine engineer used to have to do these changes made manually, which was taking the Engineer on average one hour every week to accomplish. This application allows making changes to large quantities of these files in a matter of few clicks, which slightly reduces production costs.
+### Purpose
+This program automates routine changes, eliminating the need for
+manual effort previously taking up an average of one hour per 
+week for engineers. With just a few clicks, it streamlines file 
+modifications, significantly reducing production costs.  For visual
+demonstrations, please take a look at the video I've shared below.
 
-The program has simple design and a number of user navigation buttons:
-<img src="Resources/MassTextModifierScreenshot1.png"></img>
+### Key Features
+- Batch Editing: Effortlessly make changes to a multitude of .hop and .txt files at once.
+- Time Efficiency: Reduce the time spent on manual modifications, enhancing overall productivity.
+- Cost Reduction: By streamlining the editing process, the CNC File Editor contributes to decreased production costs.
 
-The program inserts few lines of commands in a specific place in the file. The modification is illustrated in the image below:
-<img src="Resources/MassTextModifierScreenshot2.png"></img>
+# Running the application
+### Production environment
+Run the incuded .msi installer. Please note, this requires
+[.NET Desktop runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) 8 to be installed on your machine. 
+Once installed, open the desktop shortcut.
+
+### Development environment
+- Open repository in Visual Studio.
+- Right click on MassTextModifier.csproj and select **Set as Startup Item**
+- Run the application
